@@ -20,8 +20,8 @@ router.post('/add', function(req, res){
   })
 });
 
-router.get('/delete', function(req, res){
-  db.remove()
+router.delete('/delete', function(req, res){
+  db.remove(req.body)
   .then(data=>{
     res.send("delete succefully");
     console.log("delete succefully");
