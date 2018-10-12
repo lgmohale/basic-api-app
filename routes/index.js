@@ -28,6 +28,14 @@ router.delete('/delete', function(req, res){
   })
 });
 
+router.get('/deleteall', function(req, res){
+  db.remove()
+  .then(data=>{
+    res.send("delete succefully");
+    console.log("delete succefully");
+  })
+});
+
 router.get('/update', function(req, res){
   db.update({name:"var"}, {$set:{name: "const"}}, {multi: false})
   .then(data=>{

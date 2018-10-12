@@ -36,3 +36,8 @@ function display(){
         .then(res => res.json())
         .then(res => console.log(res));
     }
+    function deleteall(){
+        fetch('http://localhost:9090/task/deleteall')
+        .then(res => res.json())
+        .then(res => console.log(res));
+    }
