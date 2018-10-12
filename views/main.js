@@ -2,11 +2,11 @@ function display(){
     fetch('http://localhost:9090/task/show')
     .then(res => res.json())
     .then(res => res.map(user => user))
-    .then(userNames => document.getElementById("tasks").innerHTML = userNames.map(data=>`<h1>${data.name}</h1><button onclick="deleteTask('${data._id}');display()" class="btn btn-default" >DELETE</button> `).join(''));
+    .then(userNames => document.getElementById("tasks").innerHTML = userNames.map(data=>`<p id="par"> ${data.name}<a href="" onclick="deleteTask('${data._id}');display()" class="button1">DELETE</a></p>`).join(''));
     }
 
     function add(){
-        const myPost = { };
+        const myPost = {};
         myPost.name = document.getElementById("name").value;
         const options = {
         method: 'POST',
